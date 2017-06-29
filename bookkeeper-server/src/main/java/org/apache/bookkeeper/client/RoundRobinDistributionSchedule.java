@@ -17,8 +17,6 @@
  */
 package org.apache.bookkeeper.client;
 
-import org.apache.bookkeeper.util.MathUtils;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashSet;
