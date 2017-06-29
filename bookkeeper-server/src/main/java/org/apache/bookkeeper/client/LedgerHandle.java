@@ -471,7 +471,7 @@ public class LedgerHandle implements AutoCloseable {
                     public String toString() {
                         return String.format("WriteLedgerConfigForClose(%d)", ledgerId);
                     }
-                };
+                }
 
                 writeLedgerConfig(new CloseCb());
 
@@ -1310,7 +1310,7 @@ public class LedgerHandle implements AutoCloseable {
         public String toString() {
             return String.format("ChangeEnsemble(%d)", ledgerId);
         }
-    };
+    }
 
     /**
      * Callback which is reading the ledgerMetadata present in zk. This will try
@@ -1435,7 +1435,7 @@ public class LedgerHandle implements AutoCloseable {
         public String toString() {
             return String.format("ReReadLedgerMetadata(%d)", ledgerId);
         }
-    };
+    }
 
     void unsetSuccessAndSendWriteRequest(final int bookieIndex) {
         for (PendingAddOp pendingAddOp : pendingAddOps) {
