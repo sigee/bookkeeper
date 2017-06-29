@@ -315,7 +315,7 @@ public class BookieRecoveryTest extends MultiLedgerManagerMultiDigestTestCase {
 
         // Wait for the async method to complete.
         synchronized (sync) {
-            while (sync.value == false) {
+            while (!sync.value) {
                 sync.wait();
             }
             assertTrue(bookieRecoverCb.success);
@@ -372,7 +372,7 @@ public class BookieRecoveryTest extends MultiLedgerManagerMultiDigestTestCase {
 
         // Wait for the async method to complete.
         synchronized (sync) {
-            while (sync.value == false) {
+            while (!sync.value) {
                 sync.wait();
             }
             assertTrue(bookieRecoverCb.success);
@@ -495,7 +495,7 @@ public class BookieRecoveryTest extends MultiLedgerManagerMultiDigestTestCase {
         }
 
         long await() throws InterruptedException {
-            if (latch.await(60, TimeUnit.SECONDS) == false) {
+            if (!latch.await(60, TimeUnit.SECONDS)) {
                 LOG.warn("Didn't get all responses in verification");
                 return 0;
             } else {
@@ -574,7 +574,7 @@ public class BookieRecoveryTest extends MultiLedgerManagerMultiDigestTestCase {
         });
 
         synchronized (syncObj) {
-            while (syncObj.value == false) {
+            while (!syncObj.value) {
                 syncObj.wait();
             }
         }

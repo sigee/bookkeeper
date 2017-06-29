@@ -598,7 +598,7 @@ public abstract class BookKeeperClusterTestCase {
      * isAutoRecoveryEnabled is true.
      */
     public void stopReplicationService() throws Exception{
-        if(false == isAutoRecoveryEnabled()){
+        if(!isAutoRecoveryEnabled()){
             return;
         }
         for (Entry<BookieServer, AutoRecoveryMain> autoRecoveryProcess : autoRecoveryProcesses
