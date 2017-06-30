@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 class ZooWorker {
 
-    static final Logger logger = LoggerFactory.getLogger(ZooWorker.class);
+    static final Logger LOGGER = LoggerFactory.getLogger(ZooWorker.class);
 
     int attempts = 0;
     long startTimeNanos;
@@ -75,10 +75,10 @@ class ZooWorker {
      * @return true if given result code is recoverable.
      */
     public static boolean isRecoverableException(int rc) {
-        return KeeperException.Code.CONNECTIONLOSS.intValue() == rc ||
-                KeeperException.Code.OPERATIONTIMEOUT.intValue() == rc ||
-                KeeperException.Code.SESSIONMOVED.intValue() == rc ||
-                KeeperException.Code.SESSIONEXPIRED.intValue() == rc;
+        return KeeperException.Code.CONNECTIONLOSS.intValue() == rc
+                || KeeperException.Code.OPERATIONTIMEOUT.intValue() == rc
+                || KeeperException.Code.SESSIONMOVED.intValue() == rc
+                || KeeperException.Code.SESSIONEXPIRED.intValue() == rc;
     }
 
     /**
@@ -91,7 +91,7 @@ class ZooWorker {
         return isRecoverableException(exception.code().intValue());
     }
 
-    static interface ZooCallable<T> {
+    interface ZooCallable<T> {
         /**
          * Be compatible with ZooKeeper interface.
          *
@@ -99,7 +99,7 @@ class ZooWorker {
          * @throws InterruptedException
          * @throws KeeperException
          */
-        public T call() throws InterruptedException, KeeperException;
+        T call() throws InterruptedException, KeeperException;
     }
 
     /**
@@ -134,7 +134,7 @@ class ZooWorker {
                 if (null != client) {
                     client.waitForConnection();
                 }
-                logger.debug("Execute {} at {} retry attempt.", proc, attempts);
+                LOGGER.debug("Execute {} at {} retry attempt.", proc, attempts);
                 if (null != rateLimiter) {
                     rateLimiter.acquire();
                 }
@@ -145,13 +145,13 @@ class ZooWorker {
                 ++attempts;
                 boolean rethrow = true;
                 long elapsedTime = MathUtils.elapsedMSec(startTimeNanos);
-                if (((null != client && isRecoverableException(e)) || null == client) &&
-                        retryPolicy.allowRetry(attempts, elapsedTime)) {
+                if (((null != client && isRecoverableException(e)) || null == client)
+                        && retryPolicy.allowRetry(attempts, elapsedTime)) {
                     rethrow = false;
                 }
                 if (rethrow) {
                     statsLogger.registerFailedEvent(MathUtils.elapsedMicroSec(startTimeNanos), TimeUnit.MICROSECONDS);
-                    logger.debug("Stopped executing {} after {} attempts.", proc, attempts);
+                    LOGGER.debug("Stopped executing {} after {} attempts.", proc, attempts);
                     throw e;
                 }
                 TimeUnit.MILLISECONDS.sleep(retryPolicy.nextRetryWaitTime(attempts, elapsedTime));

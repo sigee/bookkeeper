@@ -31,85 +31,85 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Configuration settings for client side
+ * Configuration settings for client side.
  */
 public class ClientConfiguration extends AbstractConfiguration {
 
     // Zookeeper Parameters
-    protected final static String ZK_TIMEOUT = "zkTimeout";
-    protected final static String ZK_SERVERS = "zkServers";
+    protected static final String ZK_TIMEOUT = "zkTimeout";
+    protected static final String ZK_SERVERS = "zkServers";
 
     // Throttle value
-    protected final static String THROTTLE = "throttle";
+    protected static final String THROTTLE = "throttle";
 
     // Digest Type
-    protected final static String DIGEST_TYPE = "digestType";
-    protected final static String ENABLE_DIGEST_TYPE_AUTODETECTION = "enableDigestTypeAutodetection";
+    protected static final String DIGEST_TYPE = "digestType";
+    protected static final String ENABLE_DIGEST_TYPE_AUTODETECTION = "enableDigestTypeAutodetection";
 
     // Passwd
-    protected final static String PASSWD = "passwd";
+    protected static final String PASSWD = "passwd";
 
     // NIO Parameters
-    protected final static String CLIENT_TCP_NODELAY = "clientTcpNoDelay";
-    protected final static String CLIENT_SOCK_KEEPALIVE = "clientSockKeepalive";
-    protected final static String CLIENT_SENDBUFFER_SIZE = "clientSendBufferSize";
-    protected final static String CLIENT_RECEIVEBUFFER_SIZE = "clientReceiveBufferSize";
-    protected final static String CLIENT_WRITEBUFFER_LOW_WATER_MARK = "clientWriteBufferLowWaterMark";
-    protected final static String CLIENT_WRITEBUFFER_HIGH_WATER_MARK = "clientWriteBufferHighWaterMark";
-    protected final static String CLIENT_CONNECT_TIMEOUT_MILLIS = "clientConnectTimeoutMillis";
-    protected final static String NUM_CHANNELS_PER_BOOKIE = "numChannelsPerBookie";
-    protected final static String USE_V2_WIRE_PROTOCOL = "useV2WireProtocol";
+    protected static final String CLIENT_TCP_NODELAY = "clientTcpNoDelay";
+    protected static final String CLIENT_SOCK_KEEPALIVE = "clientSockKeepalive";
+    protected static final String CLIENT_SENDBUFFER_SIZE = "clientSendBufferSize";
+    protected static final String CLIENT_RECEIVEBUFFER_SIZE = "clientReceiveBufferSize";
+    protected static final String CLIENT_WRITEBUFFER_LOW_WATER_MARK = "clientWriteBufferLowWaterMark";
+    protected static final String CLIENT_WRITEBUFFER_HIGH_WATER_MARK = "clientWriteBufferHighWaterMark";
+    protected static final String CLIENT_CONNECT_TIMEOUT_MILLIS = "clientConnectTimeoutMillis";
+    protected static final String NUM_CHANNELS_PER_BOOKIE = "numChannelsPerBookie";
+    protected static final String USE_V2_WIRE_PROTOCOL = "useV2WireProtocol";
     // Read Parameters
-    protected final static String READ_TIMEOUT = "readTimeout";
-    protected final static String SPECULATIVE_READ_TIMEOUT = "speculativeReadTimeout";
-    protected final static String ENABLE_PARALLEL_RECOVERY_READ = "enableParallelRecoveryRead";
-    protected final static String RECOVERY_READ_BATCH_SIZE = "recoveryReadBatchSize";
+    protected static final String READ_TIMEOUT = "readTimeout";
+    protected static final String SPECULATIVE_READ_TIMEOUT = "speculativeReadTimeout";
+    protected static final String ENABLE_PARALLEL_RECOVERY_READ = "enableParallelRecoveryRead";
+    protected static final String RECOVERY_READ_BATCH_SIZE = "recoveryReadBatchSize";
     // Timeout Setting
-    protected final static String ADD_ENTRY_TIMEOUT_SEC = "addEntryTimeoutSec";
-    protected final static String ADD_ENTRY_QUORUM_TIMEOUT_SEC = "addEntryQuorumTimeoutSec";
-    protected final static String READ_ENTRY_TIMEOUT_SEC = "readEntryTimeoutSec";
-    protected final static String TIMEOUT_TASK_INTERVAL_MILLIS = "timeoutTaskIntervalMillis";
-    protected final static String EXPLICIT_LAC_INTERVAL = "explicitLacInterval";
-    protected final static String PCBC_TIMEOUT_TIMER_TICK_DURATION_MS = "pcbcTimeoutTimerTickDurationMs";
-    protected final static String PCBC_TIMEOUT_TIMER_NUM_TICKS = "pcbcTimeoutTimerNumTicks";
-    protected final static String TIMEOUT_TIMER_TICK_DURATION_MS = "timeoutTimerTickDurationMs";
-    protected final static String TIMEOUT_TIMER_NUM_TICKS = "timeoutTimerNumTicks";
+    protected static final String ADD_ENTRY_TIMEOUT_SEC = "addEntryTimeoutSec";
+    protected static final String ADD_ENTRY_QUORUM_TIMEOUT_SEC = "addEntryQuorumTimeoutSec";
+    protected static final String READ_ENTRY_TIMEOUT_SEC = "readEntryTimeoutSec";
+    protected static final String TIMEOUT_TASK_INTERVAL_MILLIS = "timeoutTaskIntervalMillis";
+    protected static final String EXPLICIT_LAC_INTERVAL = "explicitLacInterval";
+    protected static final String PCBC_TIMEOUT_TIMER_TICK_DURATION_MS = "pcbcTimeoutTimerTickDurationMs";
+    protected static final String PCBC_TIMEOUT_TIMER_NUM_TICKS = "pcbcTimeoutTimerNumTicks";
+    protected static final String TIMEOUT_TIMER_TICK_DURATION_MS = "timeoutTimerTickDurationMs";
+    protected static final String TIMEOUT_TIMER_NUM_TICKS = "timeoutTimerNumTicks";
 
     // Bookie health check settings
-    protected final static String BOOKIE_HEALTH_CHECK_ENABLED = "bookieHealthCheckEnabled";
-    protected final static String BOOKIE_HEALTH_CHECK_INTERVAL_SECONDS = "bookieHealthCheckIntervalSeconds";
-    protected final static String BOOKIE_ERROR_THRESHOLD_PER_INTERVAL = "bookieErrorThresholdPerInterval";
-    protected final static String BOOKIE_QUARANTINE_TIME_SECONDS = "bookieQuarantineTimeSeconds";
+    protected static final String BOOKIE_HEALTH_CHECK_ENABLED = "bookieHealthCheckEnabled";
+    protected static final String BOOKIE_HEALTH_CHECK_INTERVAL_SECONDS = "bookieHealthCheckIntervalSeconds";
+    protected static final String BOOKIE_ERROR_THRESHOLD_PER_INTERVAL = "bookieErrorThresholdPerInterval";
+    protected static final String BOOKIE_QUARANTINE_TIME_SECONDS = "bookieQuarantineTimeSeconds";
 
     // Bookie info poll interval
-    protected final static String DISK_WEIGHT_BASED_PLACEMENT_ENABLED = "diskWeightBasedPlacementEnabled";
-    protected final static String GET_BOOKIE_INFO_INTERVAL_SECONDS = "getBookieInfoIntervalSeconds";
-    protected final static String BOOKIE_MAX_MULTIPLE_FOR_WEIGHTED_PLACEMENT = "bookieMaxMultipleForWeightBasedPlacement";
-    protected final static String GET_BOOKIE_INFO_TIMEOUT_SECS = "getBookieInfoTimeoutSecs";
+    protected static final String DISK_WEIGHT_BASED_PLACEMENT_ENABLED = "diskWeightBasedPlacementEnabled";
+    protected static final String GET_BOOKIE_INFO_INTERVAL_SECONDS = "getBookieInfoIntervalSeconds";
+    protected static final String BOOKIE_MAX_MULTIPLE_FOR_WEIGHTED_PLACEMENT = "bookieMaxMultipleForWeightBasedPlacement";
+    protected static final String GET_BOOKIE_INFO_TIMEOUT_SECS = "getBookieInfoTimeoutSecs";
 
     // Number Woker Threads
-    protected final static String NUM_WORKER_THREADS = "numWorkerThreads";
+    protected static final String NUM_WORKER_THREADS = "numWorkerThreads";
 
     // Ensemble Placement Policy
-    protected final static String ENSEMBLE_PLACEMENT_POLICY = "ensemblePlacementPolicy";
-    protected final static String NETWORK_TOPOLOGY_STABILIZE_PERIOD_SECONDS = "networkTopologyStabilizePeriodSeconds";
+    protected static final String ENSEMBLE_PLACEMENT_POLICY = "ensemblePlacementPolicy";
+    protected static final String NETWORK_TOPOLOGY_STABILIZE_PERIOD_SECONDS = "networkTopologyStabilizePeriodSeconds";
 
     // Stats
-    protected final static String ENABLE_TASK_EXECUTION_STATS = "enableTaskExecutionStats";
-    protected final static String TASK_EXECUTION_WARN_TIME_MICROS = "taskExecutionWarnTimeMicros";
+    protected static final String ENABLE_TASK_EXECUTION_STATS = "enableTaskExecutionStats";
+    protected static final String TASK_EXECUTION_WARN_TIME_MICROS = "taskExecutionWarnTimeMicros";
 
     // Role of the client
-    protected final static String CLIENT_ROLE = "clientRole";
+    protected static final String CLIENT_ROLE = "clientRole";
 
     /**
      * This client will act as a standard client
      */
-    public final static String CLIENT_ROLE_STANDARD = "standard";
+    public static final String CLIENT_ROLE_STANDARD = "standard";
 
     /**
      * This client will act as a system client, like the {@link Auditor}
      */
-    public final static String CLIENT_ROLE_SYSTEM = "system";
+    public static final String CLIENT_ROLE_SYSTEM = "system";
 
     /**
      * Construct a default client-side configuration

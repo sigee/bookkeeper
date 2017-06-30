@@ -37,113 +37,112 @@ import org.apache.commons.lang.StringUtils;
  */
 public class ServerConfiguration extends AbstractConfiguration {
     // Entry Log Parameters
-    protected final static String ENTRY_LOG_SIZE_LIMIT = "logSizeLimit";
-    protected final static String ENTRY_LOG_FILE_PREALLOCATION_ENABLED = "entryLogFilePreallocationEnabled";
-    protected final static String MINOR_COMPACTION_INTERVAL = "minorCompactionInterval";
-    protected final static String MINOR_COMPACTION_THRESHOLD = "minorCompactionThreshold";
-    protected final static String MAJOR_COMPACTION_INTERVAL = "majorCompactionInterval";
-    protected final static String MAJOR_COMPACTION_THRESHOLD = "majorCompactionThreshold";
-    protected final static String IS_THROTTLE_BY_BYTES = "isThrottleByBytes";
-    protected final static String COMPACTION_MAX_OUTSTANDING_REQUESTS
-        = "compactionMaxOutstandingRequests";
-    protected final static String COMPACTION_RATE = "compactionRate";
-    protected final static String COMPACTION_RATE_BY_ENTRIES = "compactionRateByEntries";
-    protected final static String COMPACTION_RATE_BY_BYTES = "compactionRateByBytes";
+    protected static final String ENTRY_LOG_SIZE_LIMIT = "logSizeLimit";
+    protected static final String ENTRY_LOG_FILE_PREALLOCATION_ENABLED = "entryLogFilePreallocationEnabled";
+    protected static final String MINOR_COMPACTION_INTERVAL = "minorCompactionInterval";
+    protected static final String MINOR_COMPACTION_THRESHOLD = "minorCompactionThreshold";
+    protected static final String MAJOR_COMPACTION_INTERVAL = "majorCompactionInterval";
+    protected static final String MAJOR_COMPACTION_THRESHOLD = "majorCompactionThreshold";
+    protected static final String IS_THROTTLE_BY_BYTES = "isThrottleByBytes";
+    protected static final String COMPACTION_MAX_OUTSTANDING_REQUESTS = "compactionMaxOutstandingRequests";
+    protected static final String COMPACTION_RATE = "compactionRate";
+    protected static final String COMPACTION_RATE_BY_ENTRIES = "compactionRateByEntries";
+    protected static final String COMPACTION_RATE_BY_BYTES = "compactionRateByBytes";
 
     // Gc Parameters
-    protected final static String GC_WAIT_TIME = "gcWaitTime";
-    protected final static String IS_FORCE_GC_ALLOW_WHEN_NO_SPACE = "isForceGCAllowWhenNoSpace";
-    protected final static String GC_OVERREPLICATED_LEDGER_WAIT_TIME = "gcOverreplicatedLedgerWaitTime";
+    protected static final String GC_WAIT_TIME = "gcWaitTime";
+    protected static final String IS_FORCE_GC_ALLOW_WHEN_NO_SPACE = "isForceGCAllowWhenNoSpace";
+    protected static final String GC_OVERREPLICATED_LEDGER_WAIT_TIME = "gcOverreplicatedLedgerWaitTime";
     // Sync Parameters
-    protected final static String FLUSH_INTERVAL = "flushInterval";
-    protected final static String FLUSH_ENTRYLOG_INTERVAL_BYTES = "flushEntrylogBytes";
+    protected static final String FLUSH_INTERVAL = "flushInterval";
+    protected static final String FLUSH_ENTRYLOG_INTERVAL_BYTES = "flushEntrylogBytes";
     // Bookie death watch interval
-    protected final static String DEATH_WATCH_INTERVAL = "bookieDeathWatchInterval";
+    protected static final String DEATH_WATCH_INTERVAL = "bookieDeathWatchInterval";
     // Ledger Cache Parameters
-    protected final static String OPEN_FILE_LIMIT = "openFileLimit";
-    protected final static String PAGE_LIMIT = "pageLimit";
-    protected final static String PAGE_SIZE = "pageSize";
+    protected static final String OPEN_FILE_LIMIT = "openFileLimit";
+    protected static final String PAGE_LIMIT = "pageLimit";
+    protected static final String PAGE_SIZE = "pageSize";
     // Journal Parameters
-    protected final static String MAX_JOURNAL_SIZE = "journalMaxSizeMB";
-    protected final static String MAX_BACKUP_JOURNALS = "journalMaxBackups";
-    protected final static String JOURNAL_ADAPTIVE_GROUP_WRITES = "journalAdaptiveGroupWrites";
-    protected final static String JOURNAL_MAX_GROUP_WAIT_MSEC = "journalMaxGroupWaitMSec";
-    protected final static String JOURNAL_BUFFERED_WRITES_THRESHOLD = "journalBufferedWritesThreshold";
-    protected final static String JOURNAL_BUFFERED_ENTRIES_THRESHOLD = "journalBufferedEntriesThreshold";
-    protected final static String JOURNAL_FLUSH_WHEN_QUEUE_EMPTY = "journalFlushWhenQueueEmpty";
-    protected final static String JOURNAL_REMOVE_FROM_PAGE_CACHE = "journalRemoveFromPageCache";
-    protected final static String JOURNAL_PRE_ALLOC_SIZE = "journalPreAllocSizeMB";
-    protected final static String JOURNAL_WRITE_BUFFER_SIZE = "journalWriteBufferSizeKB";
-    protected final static String JOURNAL_ALIGNMENT_SIZE = "journalAlignmentSize";
-    protected final static String NUM_JOURNAL_CALLBACK_THREADS = "numJournalCallbackThreads";
-    protected final static String JOURNAL_FORMAT_VERSION_TO_WRITE = "journalFormatVersionToWrite";
+    protected static final String MAX_JOURNAL_SIZE = "journalMaxSizeMB";
+    protected static final String MAX_BACKUP_JOURNALS = "journalMaxBackups";
+    protected static final String JOURNAL_ADAPTIVE_GROUP_WRITES = "journalAdaptiveGroupWrites";
+    protected static final String JOURNAL_MAX_GROUP_WAIT_MSEC = "journalMaxGroupWaitMSec";
+    protected static final String JOURNAL_BUFFERED_WRITES_THRESHOLD = "journalBufferedWritesThreshold";
+    protected static final String JOURNAL_BUFFERED_ENTRIES_THRESHOLD = "journalBufferedEntriesThreshold";
+    protected static final String JOURNAL_FLUSH_WHEN_QUEUE_EMPTY = "journalFlushWhenQueueEmpty";
+    protected static final String JOURNAL_REMOVE_FROM_PAGE_CACHE = "journalRemoveFromPageCache";
+    protected static final String JOURNAL_PRE_ALLOC_SIZE = "journalPreAllocSizeMB";
+    protected static final String JOURNAL_WRITE_BUFFER_SIZE = "journalWriteBufferSizeKB";
+    protected static final String JOURNAL_ALIGNMENT_SIZE = "journalAlignmentSize";
+    protected static final String NUM_JOURNAL_CALLBACK_THREADS = "numJournalCallbackThreads";
+    protected static final String JOURNAL_FORMAT_VERSION_TO_WRITE = "journalFormatVersionToWrite";
     // Bookie Parameters
-    protected final static String BOOKIE_PORT = "bookiePort";
-    protected final static String LISTENING_INTERFACE = "listeningInterface";
-    protected final static String ALLOW_LOOPBACK = "allowLoopback";
+    protected static final String BOOKIE_PORT = "bookiePort";
+    protected static final String LISTENING_INTERFACE = "listeningInterface";
+    protected static final String ALLOW_LOOPBACK = "allowLoopback";
 
-    protected final static String JOURNAL_DIR = "journalDirectory";
-    protected final static String JOURNAL_DIRS = "journalDirectories";
-    protected final static String LEDGER_DIRS = "ledgerDirectories";
-    protected final static String INDEX_DIRS = "indexDirectories";
-    protected final static String ALLOW_STORAGE_EXPANSION = "allowStorageExpansion";
+    protected static final String JOURNAL_DIR = "journalDirectory";
+    protected static final String JOURNAL_DIRS = "journalDirectories";
+    protected static final String LEDGER_DIRS = "ledgerDirectories";
+    protected static final String INDEX_DIRS = "indexDirectories";
+    protected static final String ALLOW_STORAGE_EXPANSION = "allowStorageExpansion";
     // NIO Parameters
-    protected final static String SERVER_TCP_NODELAY = "serverTcpNoDelay";
-    protected final static String SERVER_SOCK_KEEPALIVE = "serverSockKeepalive";
-    protected final static String SERVER_SOCK_LINGER = "serverTcpLinger";
+    protected static final String SERVER_TCP_NODELAY = "serverTcpNoDelay";
+    protected static final String SERVER_SOCK_KEEPALIVE = "serverSockKeepalive";
+    protected static final String SERVER_SOCK_LINGER = "serverTcpLinger";
 
     // Zookeeper Parameters
-    protected final static String ZK_TIMEOUT = "zkTimeout";
-    protected final static String ZK_SERVERS = "zkServers";
-    protected final static String ZK_RETRY_BACKOFF_START_MS = "zkRetryBackoffStartMs";
-    protected final static String ZK_RETRY_BACKOFF_MAX_MS = "zkRetryBackoffMaxMs";
-    protected final static String OPEN_LEDGER_REREPLICATION_GRACE_PERIOD = "openLedgerRereplicationGracePeriod";
+    protected static final String ZK_TIMEOUT = "zkTimeout";
+    protected static final String ZK_SERVERS = "zkServers";
+    protected static final String ZK_RETRY_BACKOFF_START_MS = "zkRetryBackoffStartMs";
+    protected static final String ZK_RETRY_BACKOFF_MAX_MS = "zkRetryBackoffMaxMs";
+    protected static final String OPEN_LEDGER_REREPLICATION_GRACE_PERIOD = "openLedgerRereplicationGracePeriod";
     //ReadOnly mode support on all disk full
-    protected final static String READ_ONLY_MODE_ENABLED = "readOnlyModeEnabled";
+    protected static final String READ_ONLY_MODE_ENABLED = "readOnlyModeEnabled";
     //Whether the bookie is force started in ReadOnly mode
-    protected final static String FORCE_READ_ONLY_BOOKIE = "forceReadOnlyBookie";
+    protected static final String FORCE_READ_ONLY_BOOKIE = "forceReadOnlyBookie";
     //Disk utilization
-    protected final static String DISK_USAGE_THRESHOLD = "diskUsageThreshold";
-    protected final static String DISK_USAGE_WARN_THRESHOLD = "diskUsageWarnThreshold";
-    protected final static String DISK_USAGE_LWM_THRESHOLD = "diskUsageLwmThreshold";
-    protected final static String DISK_CHECK_INTERVAL = "diskCheckInterval";
-    protected final static String AUDITOR_PERIODIC_CHECK_INTERVAL = "auditorPeriodicCheckInterval";
-    protected final static String AUDITOR_PERIODIC_BOOKIE_CHECK_INTERVAL = "auditorPeriodicBookieCheckInterval";
-    protected final static String AUTO_RECOVERY_DAEMON_ENABLED = "autoRecoveryDaemonEnabled";
-    protected final static String LOST_BOOKIE_RECOVERY_DELAY = "lostBookieRecoveryDelay";
+    protected static final String DISK_USAGE_THRESHOLD = "diskUsageThreshold";
+    protected static final String DISK_USAGE_WARN_THRESHOLD = "diskUsageWarnThreshold";
+    protected static final String DISK_USAGE_LWM_THRESHOLD = "diskUsageLwmThreshold";
+    protected static final String DISK_CHECK_INTERVAL = "diskCheckInterval";
+    protected static final String AUDITOR_PERIODIC_CHECK_INTERVAL = "auditorPeriodicCheckInterval";
+    protected static final String AUDITOR_PERIODIC_BOOKIE_CHECK_INTERVAL = "auditorPeriodicBookieCheckInterval";
+    protected static final String AUTO_RECOVERY_DAEMON_ENABLED = "autoRecoveryDaemonEnabled";
+    protected static final String LOST_BOOKIE_RECOVERY_DELAY = "lostBookieRecoveryDelay";
 
     // Worker Thread parameters.
-    protected final static String NUM_ADD_WORKER_THREADS = "numAddWorkerThreads";
-    protected final static String NUM_READ_WORKER_THREADS = "numReadWorkerThreads";
+    protected static final String NUM_ADD_WORKER_THREADS = "numAddWorkerThreads";
+    protected static final String NUM_READ_WORKER_THREADS = "numReadWorkerThreads";
 
-    protected final static String READ_BUFFER_SIZE = "readBufferSizeBytes";
-    protected final static String WRITE_BUFFER_SIZE = "writeBufferSizeBytes";
+    protected static final String READ_BUFFER_SIZE = "readBufferSizeBytes";
+    protected static final String WRITE_BUFFER_SIZE = "writeBufferSizeBytes";
     // Whether the bookie should use its hostname or ipaddress for the
     // registration.
-    protected final static String USE_HOST_NAME_AS_BOOKIE_ID = "useHostNameAsBookieID";
-    protected final static String ENABLE_LOCAL_TRANSPORT = "enableLocalTransport";
-    protected final static String DISABLE_SERVER_SOCKET_BIND = "disableServerSocketBind";
+    protected static final String USE_HOST_NAME_AS_BOOKIE_ID = "useHostNameAsBookieID";
+    protected static final String ENABLE_LOCAL_TRANSPORT = "enableLocalTransport";
+    protected static final String DISABLE_SERVER_SOCKET_BIND = "disableServerSocketBind";
 
-    protected final static String SORTED_LEDGER_STORAGE_ENABLED = "sortedLedgerStorageEnabled";
-    protected final static String SKIP_LIST_SIZE_LIMIT = "skipListSizeLimit";
-    protected final static String SKIP_LIST_CHUNK_SIZE_ENTRY = "skipListArenaChunkSize";
-    protected final static String SKIP_LIST_MAX_ALLOC_ENTRY = "skipListArenaMaxAllocSize";
+    protected static final String SORTED_LEDGER_STORAGE_ENABLED = "sortedLedgerStorageEnabled";
+    protected static final String SKIP_LIST_SIZE_LIMIT = "skipListSizeLimit";
+    protected static final String SKIP_LIST_CHUNK_SIZE_ENTRY = "skipListArenaChunkSize";
+    protected static final String SKIP_LIST_MAX_ALLOC_ENTRY = "skipListArenaMaxAllocSize";
 
     // Statistics Parameters
-    protected final static String ENABLE_STATISTICS = "enableStatistics";
-    protected final static String STATS_PROVIDER_CLASS = "statsProviderClass";
+    protected static final String ENABLE_STATISTICS = "enableStatistics";
+    protected static final String STATS_PROVIDER_CLASS = "statsProviderClass";
 
-    protected final static String LEDGER_STORAGE_CLASS = "ledgerStorageClass";
+    protected static final String LEDGER_STORAGE_CLASS = "ledgerStorageClass";
 
     // Rx adaptive ByteBuf allocator parameters
-    protected final static String BYTEBUF_ALLOCATOR_SIZE_INITIAL = "byteBufAllocatorSizeInitial";
-    protected final static String BYTEBUF_ALLOCATOR_SIZE_MIN = "byteBufAllocatorSizeMin";
-    protected final static String BYTEBUF_ALLOCATOR_SIZE_MAX = "byteBufAllocatorSizeMax";
+    protected static final String BYTEBUF_ALLOCATOR_SIZE_INITIAL = "byteBufAllocatorSizeInitial";
+    protected static final String BYTEBUF_ALLOCATOR_SIZE_MIN = "byteBufAllocatorSizeMin";
+    protected static final String BYTEBUF_ALLOCATOR_SIZE_MAX = "byteBufAllocatorSizeMax";
 
     // Bookie auth provider factory class name
-    protected final static String BOOKIE_AUTH_PROVIDER_FACTORY_CLASS = "bookieAuthProviderFactoryClass";
+    protected static final String BOOKIE_AUTH_PROVIDER_FACTORY_CLASS = "bookieAuthProviderFactoryClass";
     
-    protected final static String MIN_USABLESIZE_FOR_INDEXFILE_CREATION = "minUsableSizeForIndexFileCreation";
+    protected static final String MIN_USABLESIZE_FOR_INDEXFILE_CREATION = "minUsableSizeForIndexFileCreation";
 
     /**
      * Construct a default configuration object

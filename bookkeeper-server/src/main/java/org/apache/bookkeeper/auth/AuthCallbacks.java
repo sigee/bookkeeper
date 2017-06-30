@@ -17,10 +17,13 @@
 package org.apache.bookkeeper.auth;
 
 /**
- * Callbacks for AuthProviders
+ * Callbacks for AuthProviders.
  */
 public abstract class AuthCallbacks {
 
+    /**
+     * TODO: Write JavaDoc comment.
+     */
     public interface GenericCallback<T> {
 
         void operationComplete(int rc, T result);
